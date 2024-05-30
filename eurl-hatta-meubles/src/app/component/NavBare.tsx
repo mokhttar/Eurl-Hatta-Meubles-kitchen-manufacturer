@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import MenuLogo from "../assets/Menu-Logo.svg";
 
-
+//TODO fix navbare in 649 px (only this number ) 
 const outfitFont = Outfit({ subsets: ["latin"], weight: "300" });
 const NunitoFont = Nunito({ subsets: ["latin"], weight: "300" });
 
@@ -21,14 +21,14 @@ function NavBare() {
   };
 
   return (
-    <div className="flex justify-between items-center  px-5    bg-opacity-30  backdrop-blur-lg ">
+    <div className="flex justify-between items-center  px-8  py-1   bg-opacity-30  backdrop-blur-lg ">
       <div className="flex gap-2  items-center  ">
         <Image src={Logo} alt="Logo" className="w-20" />
         <div className={outfitFont.className}>
           <h2 className="text-xl  font-semibold ">Hatta Meubles</h2>
         </div>
       </div>
-
+  
       <div className={NunitoFont.className}>
         <Image
           src={MenuLogo}
@@ -40,15 +40,17 @@ function NavBare() {
           className={
             Menu
               ? "sm:flex  gap-3  flex-col "
-              : "sm:flex  hidden gap-5  font-semibold"
+              : "sm:flex  hidden gap-6  font-semibold items-center justify-center "
           }
         >
-          <p className="hover:cursor-pointer hover:animate-pulse">Product</p>
-          <p className="hover:cursor-pointer hover:animate-pulse">Brands</p>
-          <p className="hover:cursor-pointer hover:animate-pulse">About us</p>
-          <p className="hover:cursor-pointer hover:animate-pulse">Contact Us</p>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1">Product</p>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1" >Brands</p>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1">About us</p>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1">Contact Us</p>
+          <button className="bg-black px-5 text-white  py-1 rounded-md flex items-center hover:bg-white hover:text-black   transition-transform duration-500 hover:scale-105">Login</button>
         </div>
       </div>
+     
     </div>
   );
 }
