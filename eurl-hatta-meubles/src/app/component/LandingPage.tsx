@@ -3,7 +3,7 @@ import HeroSection from "./HeroSection";
 import Card from "./Card";
 function LandingPage() {
   return (
-    <div>
+    <div className="px-10">
        
       <HeroSection />
       <Card />

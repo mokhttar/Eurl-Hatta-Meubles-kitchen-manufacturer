@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import { Gloock } from "next/font/google";
@@ -9,6 +10,7 @@ import Test from "../assets/lotus-design-n-print-ik9WP2V8Vas-unsplash.jpg";
 import { KitchenArray } from "../TestData/Kitchens";
 import Slider from "react-slick";
 import MainKitchen from "../assets/jason-briscoe-GliaHAJ3_5A-unsplash.jpg"
+import DownArrow from "../assets/down-arrow-svgrepo-com.svg"
 
 const GlockFont = Gloock({ subsets: ["latin"], weight: "400" });
 const PrataFont = Prata({ subsets: ["cyrillic"], weight: "400" });
@@ -51,6 +53,7 @@ export default function HeroSection() {
     ],
   };
   return (
+    <div>
     <div className="bg-[#FBFFFF]  w-full flex justify-center items-center mt-20  ">
       <div className="flex md:flex-row flex-col  justify-center items-center gap-10 ">
         {/* Text Sextion */}
@@ -82,6 +85,10 @@ export default function HeroSection() {
           </Slider>
         </div>
       </div>
+    </div>
+         <div className="flex items-center justify-center mt-20">
+             <Image src={DownArrow} alt="downAroow " className="animate-bounce"  width={30}/>
+         </div>
     </div>
   );
 }
