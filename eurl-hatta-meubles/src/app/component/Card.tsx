@@ -8,7 +8,8 @@ import WorkerImages from "../assets/Workers.jpg";
 
 function Card() {
   return (
-    <div className="grid gap-10 px-10 py-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+    <div className="flex items-center justify-center">
+    <div className="grid gap-10  py-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
       <CardContainer className="inter-var">
         <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border  ">
           <CardItem
@@ -95,8 +96,7 @@ function Card() {
             translateZ="60"
             className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Bénéficiez de notre expérience décennale, offrant excellence et
-            fiabilité dans chaque projet
+            Bénéficiez de notre expérience décennale, offrant excellence et fiabilité dans chaque projet
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-4">
             <Image
@@ -111,6 +111,7 @@ function Card() {
           </CardItem>
         </CardBody>
       </CardContainer>
+    </div>
     </div>
   );
 }
