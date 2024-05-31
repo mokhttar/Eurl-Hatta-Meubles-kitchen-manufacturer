@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "antd": "^5.17.4",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.10",
     "react-slick": "^0.30.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^2.3.0"
   }
 }

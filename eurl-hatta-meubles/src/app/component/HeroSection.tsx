@@ -13,12 +13,13 @@ import MainKitchen from "../assets/jason-briscoe-GliaHAJ3_5A-unsplash.jpg"
 const GlockFont = Gloock({ subsets: ["latin"], weight: "400" });
 const PrataFont = Prata({ subsets: ["cyrillic"], weight: "400" });
 //TODO fix width image in 812 px
+//TODO check some  respo problems 
 export default function HeroSection() {
   //  Settigs for The slide
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -69,9 +70,9 @@ export default function HeroSection() {
           </div>
         </div>
         {/*Image Slider Section*/}
-        <div className="xl:w-1/2 xl:px-32 w-auto mr-10 ">
-          {/* Ensure the Slider is within a limited width container */}
-          <Slider {...settings} className="w-[450px] xl:w-[800px]  ">
+        <div className="xl:w-1/2 xl:px-32 px-20 ">
+         
+          <Slider {...settings} className="w-[450px] xl:w-[700px]  ">
             <div>
               <Image src={MainKitchen} alt="Image" className="rounded-md" />
             </div>
