@@ -43,11 +43,11 @@ function NavBare() {
               : "sm:flex  hidden gap-6  font-semibold items-center justify-center "
           }
         >
-          <p className="hover:cursor-pointer hover:animate-pulse py-1">Product</p>
-          <p className="hover:cursor-pointer hover:animate-pulse py-1" >Brands</p>
-          <p className="hover:cursor-pointer hover:animate-pulse py-1">About us</p>
-          <p className="hover:cursor-pointer hover:animate-pulse py-1">Contact Us</p>
-          <button className="bg-black px-5 text-white  py-1 rounded-md flex items-center hover:bg-white hover:text-black   transition-transform duration-500 hover:scale-105">Login</button>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1">Produit</p>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1" >Marques</p>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1">À propos de nous</p>
+          <p className="hover:cursor-pointer hover:animate-pulse py-1">Contactez-nous</p>
+          <button className="bg-black px-5 text-white  py-1 rounded-md flex items-center hover:bg-white hover:text-black   transition-transform duration-500 hover:scale-105">Connexion</button>
         </div>
       </div>
      
