@@ -21,7 +21,7 @@ function NavBare() {
   };
 
   return (
-    <div className="flex justify-between items-center  px-2  py-1   bg-opacity-30  backdrop-blur-lg ">
+    <div className="flex justify-between items-center  px-2  py-1   bg-opacity-30  backdrop-blur-lg fixed  top-0 w-full z-10">
       <div className="flex gap-2  items-center   ">
         <Image src={Logo} alt="Logo" className="w-20" />
         <div className={outfitFont.className}>

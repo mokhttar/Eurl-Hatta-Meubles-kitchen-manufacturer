@@ -26,9 +26,11 @@ export default function HeroSection() {
     autoplay: true,
     fade:true,
   }
+  // bg-[#FBFFFF]
+  // bg-[#F6EDE6]
   return (
-    <div className="px-5 scale-90">
-    <div className="bg-[#FBFFFF]  w-full flex justify-center items-center mt-20   ">
+    <div className="px-5 bg-[#FBFFFF] scale-90">
+    <div className="  py-10 rounded-md w-full flex justify-center items-center xl:mt-20  ">
       <div className="flex md:flex-row flex-col  justify-center items-center gap-10 ">
         {/* Text Sextion */}
         <div className="xl:w-1/2 xl:px-32  px-20 py-12  flex flex-col  gap-5 ">

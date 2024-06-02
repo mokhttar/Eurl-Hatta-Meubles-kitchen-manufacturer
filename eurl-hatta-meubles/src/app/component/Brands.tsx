@@ -24,7 +24,7 @@ function Brands() {
     <div>
       <Slider
         {...settings}
-        className="py-2 bg-gray-900 flex  items-center rounded-md xl:scale-75"
+        className="py-2 bg-gray-900 flex  items-center rounded-md xl:scale-75  "
       >
         <div>
           <a href="https://www.samet.com.tr/">
