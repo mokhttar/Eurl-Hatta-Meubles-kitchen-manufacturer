@@ -5,7 +5,7 @@ import AboutUs from "./AboutUs";
 import Card from "./Card";
 function LandingPage() {
   return (
-    <div className="">
+    <div className=" px-10 ml-5 sm:ml-0 sm:px-0">
       <HeroSection />
       <Card />
       <Brands />

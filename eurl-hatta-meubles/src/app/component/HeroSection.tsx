@@ -40,21 +40,16 @@ export default function HeroSection() {
   };
   let TitleRef = useRef<HTMLHeadingElement>(null);
 
-  function HanldeRef(event: any) {
-    event.preventDefault();
-  }
-
   useEffect(() => {
     if (TitleRef.current != null) {
       gsap.to(TitleRef.current, {
-          duration:.8,
-         ease:Power3.easeInOut,
-         y:-10,
-        opacity: 1 ,
+        duration: 0.8,
+        ease: Power3.easeInOut,
+        y: -10,
+        opacity: 1,
       });
     }
   }, []);
-
   return (
     <div className="px-5 bg-[#FBFFFF] scale-90">
       <div className="py-10 rounded-md w-full flex justify-center items-center xl:mt-20">
@@ -70,10 +65,7 @@ export default function HeroSection() {
               </h1>
             </div>
             <div className="flex gap-10">
-              <button
-                className="bg-black text-white font-semibold px-5 py-1 transition-transform duration-500 hover:scale-95 rounded-md hover:animate-pulse text-xl"
-                onClick={HanldeRef}
-              >
+              <button className="bg-black text-white font-semibold px-5 py-1 transition-transform duration-500 hover:scale-95 rounded-md hover:animate-pulse text-xl">
                 Commencer
               </button>
               <button className="text-xl hover:bg-black font-semibold hover:text-white transition-transform duration-500 hover:scale-95 px-5 py-1 rounded-md hover:animate-pulse">
