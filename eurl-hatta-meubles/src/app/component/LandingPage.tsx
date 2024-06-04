@@ -9,11 +9,10 @@ function LandingPage() {
       <HeroSection />
       <Card />
       <Brands />
-      <section>
-      <AboutUs />
+      <section  className=" ">
+        <AboutUs />
       </section>
     </div>
   );
 }
-
 export default LandingPage;

@@ -6,7 +6,9 @@ import HighGloseImgKitchen from "../assets/glossy-kitchen-cabinets-1024x512.jpg"
 import AccesoirsImg from "../assets/Accesoirs.jpg";
 import WorkerImages from "../assets/Workers.jpg";
 
+
 function Card() {
+ 
   return (
     <div className="flex items-center justify-center">
     <div className="grid gap-10  xl:py-20 py-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
