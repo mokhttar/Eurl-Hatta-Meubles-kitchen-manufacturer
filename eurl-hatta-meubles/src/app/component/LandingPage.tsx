@@ -9,9 +9,8 @@ function LandingPage() {
       <HeroSection />
       <Card />
       <Brands />
-      <section  className=" ">
-        <AboutUs />
-      </section>
+
+      <AboutUs />
     </div>
   );
 }

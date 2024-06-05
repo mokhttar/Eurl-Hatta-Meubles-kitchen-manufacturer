@@ -1,32 +1,67 @@
 "use client";
 // About us section to describe the company and the details about it
-import React from "react";
-import Image from "next/image";
-import { Ibarra_Real_Nova } from "next/font/google";
+import React, { useEffect, useRef } from "react";
 import DelevryIcon from "../assets/Lottie/Delivery.json";
-import PriceTagIcon from "../assets/Lottie//PriceTag.json";
+import PriceTagIcon from "../assets/Lottie/PriceTag.json";
 import ratingIcon from "../assets/Lottie/Rating.json";
 import Lottie from "lottie-react";
 import { Merriweather } from "next/font/google";
 import { Poppins } from "next/font/google";
-//TODO change  design about us page . 
+import { gsap, Power3 } from "gsap";
+
+//TODO change design about us page.
 
 const MerriFont = Merriweather({ subsets: ["cyrillic"], weight: "400" });
 const PoppinsFont = Poppins({ subsets: ["latin"], weight: "300" });
+
 function AboutUs() {
+  const PageRef = useRef(null);
+
+  useEffect(() => {
+    const handleScrollAnimation = (entries:any) => {
+      entries.forEach((entry:any) => {
+        if (entry.isIntersecting) {
+          gsap.to(PageRef.current, {
+            duration: .5,
+            ease: Power3.easeIn,
+            y: -10,
+            opacity: 1,
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleScrollAnimation, {
+      threshold: 0.2,
+    });
+
+    if (PageRef.current) {
+      observer.observe(PageRef.current);
+    }
+
+    return () => {
+      if (PageRef.current) {
+        observer.unobserve(PageRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col items-center    mt-10  py-10 lg:px-32 lg:py-24 px-10  ">
+    <div
+      className="flex flex-col items-center bopacity-0 mt-10 py-10 lg:px-32 lg:py-24"
+      ref={PageRef}
+    >
       <div
-        className={`bg-[#f8f9fa]  rounded-md  flex flex-col  text-start  items-center px-5 justify-center  ${PoppinsFont.className}`}
+        className={` rounded-md flex flex-col border   text-start items-center px-5 justify-center ${PoppinsFont.className}`}
       >
-        <div className=" w-full lg:w-2/3 text-gray-800 ">
-          <hr className="h-1   border-none mx-auto  mt-10  bg-[#212529]" />
+        <div className="w-full lg:w-2/3 text-gray-800">
+          <hr className="h-1 border-none mx-auto mt-10 bg-[#212529]" />
           <h1
-            className={`text-5xl  text-[#2A3132] font-semibold md:text-6xl p-5 tracking-wide mb-4 text-center ${MerriFont.className}`}
+            className={`text-5xl text-[#2A3132] font-semibold md:text-6xl p-5 tracking-wide mb-4 text-center ${MerriFont.className}`}
           >
             À propos de nous
           </h1>
-          <p className="text-lg mb-8  font-semibold py-2 text-gray-800">
+          <p className="text-lg mb-8 font-semibold py-2 text-gray-800">
             EURL Hatta Meuble est une entreprise de fabrication de cuisines
             réputée pour son savoir-faire exceptionnel et ses designs innovants.
             Notre mission est de transformer votre espace cuisine en un havre de
@@ -40,9 +75,9 @@ function AboutUs() {
         </div>
 
         <div className="flex flex-col items-center w-full lg:w-2/3 font-semibold">
-          <div className="flex flex-col items-center text-start mb-8 ">
+          <div className="flex flex-col items-center text-start mb-8">
             <div className="flex mr-20 items-center justify-center">
-              <Lottie animationData={DelevryIcon} className="w-32 " />
+              <Lottie animationData={DelevryIcon} className="w-32" />
               <h1 className="text-xl font-semibold text-green-700">
                 Simple and Direct
               </h1>
@@ -58,9 +93,9 @@ function AboutUs() {
           </div>
 
           <div className="flex flex-col items-center text-start mb-8">
-            <div className="flex  gap-2 items-center">
+            <div className="flex gap-2 items-center">
               <Lottie animationData={PriceTagIcon} className="w-14 py-2" />
-              <h1 className="text-center  text-green-700 text-xl     font-semibold">
+              <h1 className="text-center text-green-700 text-xl font-semibold">
                 Meilleurs prix dans l'Algérie
               </h1>
             </div>
@@ -71,23 +106,23 @@ function AboutUs() {
               auprès de fournisseurs réputés et négocions des tarifs compétitifs
               pour vous faire bénéficier d'un excellent rapport qualité-prix.
               Notre engagement envers la qualité se reflète dans notre sélection
-              rigoureuse des produits et notre service client attentionn
+              rigoureuse des produits et notre service client attentionné.
             </p>
           </div>
 
           <div className="flex flex-col items-center text-start mb-8">
-            <div className="flex gap-2  items-center justify-center">
+            <div className="flex gap-2 items-center justify-center">
               <Lottie animationData={ratingIcon} className="w-16 py-2" />
               <p className="text-green-700 text-xl">Expertise et Confiance</p>
             </div>
 
             <p className="w-full lg:w-2/3 text-gray-800">
-              In Chez nous, vous êtes entre de bonnes mains. Notre équipe
+              Chez nous, vous êtes entre de bonnes mains. Notre équipe
               francophone expérimentée et attentionnée est là pour vous guider à
               chaque étape du processus. Nous comprenons vos besoins et nous
               nous engageons à vous offrir une expérience positive et sans
               stress. Faites confiance à notre expertise et laissez-nous vous
-              montrer pourquoi Chez nous est le meilleur choix pour vous
+              montrer pourquoi Chez nous est le meilleur choix pour vous.
             </p>
           </div>
         </div>
