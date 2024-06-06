@@ -18,11 +18,11 @@ function AboutUs() {
   const PageRef = useRef(null);
 
   useEffect(() => {
-    const handleScrollAnimation = (entries:any) => {
-      entries.forEach((entry:any) => {
+    const handleScrollAnimation = (entries: any) => {
+      entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
           gsap.to(PageRef.current, {
-            duration: .5,
+            duration: 0.5,
             ease: Power3.easeIn,
             y: -10,
             opacity: 1,
@@ -48,7 +48,7 @@ function AboutUs() {
 
   return (
     <div
-      className="flex flex-col items-center bopacity-0 mt-10 py-10 lg:px-32 lg:py-24"
+      className="flex flex-col items-center opacity-0 mt-10 py-10 lg:px-32 lg:py-24"
       ref={PageRef}
     >
       <div

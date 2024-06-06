@@ -42,6 +42,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (TitleRef.current != null) {
+
       gsap.to(TitleRef.current, {
         duration: 0.8,
         ease: Power3.easeInOut,
@@ -51,11 +52,11 @@ export default function HeroSection() {
     }
   }, []);
   return (
-    <div className="px-5 bg-[#FBFFFF] scale-90">
-      <div className="py-10 rounded-md w-full flex justify-center items-center xl:mt-20">
+    <div className="px-5 bg-[#FBFFFF]   scale-90 mr-5  flex items-center justify-center flex-wrap">
+      <div className="py-10 rounded-md w-full flex justify-center items-center xl:mt-20 ">
         <div className="flex md:flex-row flex-col justify-center items-center gap-10">
           {/* Text Section */}
-          <div className="xl:w-1/2 xl:px-32 px-20 py-12 flex flex-col gap-5">
+          <div className="xl:w-1/2 xl:px-32   md:px-0  px-20  sm:mt-10 py-12 flex flex-col gap-5">
             <div className={PrataFont.className}>
               <h1
                 className="w-auto text-4xl xl:text-5xl sm:tracking-wide leading-normal xl:leading-snug tracking-widest opacity-0"

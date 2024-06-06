@@ -1,4 +1,4 @@
-//TODO  Add two more brands 
+//TODO  Add two more brands
 "use client";
 import React from "react";
 import Slider from "react-slick";
@@ -22,6 +22,9 @@ function Brands() {
 
   return (
     <div>
+      <p className="text-center text-3xl font-semibold text-[#212529] py-2 mt-5">
+      Top accessoires, produits exceptionnels !
+      </p>
       <Slider
         {...settings}
         className="py-2 bg-gray-900 flex  items-center rounded-md xl:scale-75  "
