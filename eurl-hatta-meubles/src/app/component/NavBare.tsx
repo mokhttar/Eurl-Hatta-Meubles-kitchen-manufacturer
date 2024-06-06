@@ -39,7 +39,7 @@ function NavBare() {
         <div
           className={
             Menu
-              ? "sm:flex  gap-3  flex-col "
+              ? "sm:flex  gap-3  flex-col  "
               : "sm:flex  hidden gap-6  font-semibold items-center justify-center "
           }
         >
@@ -52,6 +52,7 @@ function NavBare() {
       </div>
      
     </div>
+    
   );
 }
 

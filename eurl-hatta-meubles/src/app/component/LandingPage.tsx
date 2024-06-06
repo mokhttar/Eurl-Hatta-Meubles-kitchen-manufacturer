@@ -6,8 +6,8 @@ import Card from "./Card";
 //
 function LandingPage() {
   return (
-    <div className=" px-10">
-      <section className=" scale-75 ml-5 sm:scale-90 sm:ml-0">
+    <div className=" overflow-hidden ">
+      <section className=" ">
       <HeroSection />
       </section>
       <Card />

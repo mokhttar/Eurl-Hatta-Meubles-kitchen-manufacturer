@@ -14,7 +14,6 @@ const GlockFont = Gloock({ subsets: ["latin"], weight: "400" });
 const PrataFont = Prata({ subsets: ["cyrillic"], weight: "400" });
 
 //TODO fix width image in 812 px
-//TODO check some respo problems
 
 export default function HeroSection() {
   // Settings for the slider
@@ -42,7 +41,6 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (TitleRef.current != null) {
-
       gsap.to(TitleRef.current, {
         duration: 0.8,
         ease: Power3.easeInOut,
@@ -53,10 +51,10 @@ export default function HeroSection() {
   }, []);
   return (
     <div className="px-5 bg-[#FBFFFF]   scale-90 mr-5  flex items-center justify-center flex-wrap">
-      <div className="py-10 rounded-md w-full flex justify-center items-center xl:mt-20 ">
+      <div className="py-10  w-full flex justify-center items-center xl:mt-20 ">
         <div className="flex md:flex-row flex-col justify-center items-center gap-10">
           {/* Text Section */}
-          <div className="xl:w-1/2 xl:px-32   md:px-0  px-20  sm:mt-10 py-12 flex flex-col gap-5">
+          <div className="xl:w-1/2 xl:px-32  w-2/3 px-5 ml-1 sm:w-auto  md:px-0  sm:px-20  sm:mt-10 py-12 flex flex-col gap-5">
             <div className={PrataFont.className}>
               <h1
                 className="w-auto text-4xl xl:text-5xl sm:tracking-wide leading-normal xl:leading-snug tracking-widest opacity-0"
@@ -65,8 +63,8 @@ export default function HeroSection() {
                 Découvrez l'Art de l'Excellence Culinaire chez EURL Hatta Meuble
               </h1>
             </div>
-            <div className="flex gap-10">
-              <button className="bg-black text-white font-semibold px-5 py-1 transition-transform duration-500 hover:scale-95 rounded-md hover:animate-pulse text-xl">
+            <div className="flex gap-10 ">
+              <button className="bg-black   text-white font-semibold px-5 py-1 transition-transform duration-500 hover:scale-95 rounded-md hover:animate-pulse text-xl">
                 Commencer
               </button>
               <button className="text-xl hover:bg-black font-semibold hover:text-white transition-transform duration-500 hover:scale-95 px-5 py-1 rounded-md hover:animate-pulse">

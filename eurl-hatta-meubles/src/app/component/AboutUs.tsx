@@ -57,11 +57,11 @@ function AboutUs() {
         <div className="w-full lg:w-2/3 text-gray-800">
           <hr className="h-1 border-none mx-auto mt-10 bg-[#212529]" />
           <h1
-            className={`text-5xl text-[#2A3132] font-semibold md:text-6xl p-5 tracking-wide mb-4 text-center ${MerriFont.className}`}
+            className={`sm:text-5xl text-3xl text-[#2A3132] font-semibold md:text-6xl p-5 tracking-wide mb-4 text-center ${MerriFont.className}`}
           >
             À propos de nous
           </h1>
-          <p className="text-lg mb-8 font-semibold py-2 text-gray-800">
+          <p className="sm:text-lg  text-base  mb-8 font-semibold py-2 text-gray-800">
             EURL Hatta Meuble est une entreprise de fabrication de cuisines
             réputée pour son savoir-faire exceptionnel et ses designs innovants.
             Notre mission est de transformer votre espace cuisine en un havre de
@@ -78,12 +78,12 @@ function AboutUs() {
           <div className="flex flex-col items-center text-start mb-8">
             <div className="flex mr-20 items-center justify-center">
               <Lottie animationData={DelevryIcon} className="w-32" />
-              <h1 className="text-xl font-semibold text-green-700">
+              <h1 className="sm:text-xl text-lg font-semibold text-green-700">
                 Simple and Direct
               </h1>
             </div>
 
-            <p className="w-full lg:w-2/3 text-gray-800">
+            <p className="w-full sm:text-base lg:w-2/3 text-gray-800">
               Chez nous, nous comprenons que votre temps est précieux. C'est
               pourquoi nous nous engageons à une livraison rapide et efficace.
               Nous travaillons sans relâche pour vous faire parvenir vos
@@ -95,7 +95,7 @@ function AboutUs() {
           <div className="flex flex-col items-center text-start mb-8">
             <div className="flex gap-2 items-center">
               <Lottie animationData={PriceTagIcon} className="w-14 py-2" />
-              <h1 className="text-center text-green-700 text-xl font-semibold">
+              <h1 className="text-center text-green-700 sm:text-xl text-lg font-semibold">
                 Meilleurs prix dans l'Algérie
               </h1>
             </div>
@@ -113,7 +113,7 @@ function AboutUs() {
           <div className="flex flex-col items-center text-start mb-8">
             <div className="flex gap-2 items-center justify-center">
               <Lottie animationData={ratingIcon} className="w-16 py-2" />
-              <p className="text-green-700 text-xl">Expertise et Confiance</p>
+              <p className="text-green-700 sm:text-xl text-lg mr-10">Expertise et Confiance</p>
             </div>
 
             <p className="w-full lg:w-2/3 text-gray-800">
