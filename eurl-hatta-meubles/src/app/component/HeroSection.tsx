@@ -4,16 +4,16 @@ import Image from "next/image";
 import { Gloock, Prata } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Test from "../assets/lotus-design-n-print-ik9WP2V8Vas-unsplash.jpg";
 import Slider from "react-slick";
-import MainKitchen from "../assets/jason-briscoe-GliaHAJ3_5A-unsplash.jpg";
-import DownArrow from "../assets/down-arrow-svgrepo-com.svg";
+import DownArrow from "/public/assets/down-arrow-svgrepo-com.svg";
 import { useRef, useEffect, useState } from "react";
 import { gsap, Power3 } from "gsap";
-const GlockFont = Gloock({ subsets: ["latin"], weight: "400" });
+import { ImageArray } from "../Data/SlideImages";
+
 const PrataFont = Prata({ subsets: ["cyrillic"], weight: "400" });
 
 //TODO fix width image in 812 px
+//DONE
 
 export default function HeroSection() {
   // Settings for the slider
@@ -50,42 +50,46 @@ export default function HeroSection() {
     }
   }, []);
   return (
-    <div className="px-5 bg-[#FBFFFF]   scale-90 mr-5  flex items-center justify-center flex-wrap">
-      <div className="py-10  w-full flex justify-center items-center xl:mt-20 ">
-        <div className="flex md:flex-row flex-col justify-center items-center gap-10">
-          {/* Text Section */}
-          <div className="xl:w-1/2 xl:px-32  w-2/3 px-5 ml-1 sm:w-auto  md:px-0  sm:px-20  sm:mt-10 py-12 flex flex-col gap-5">
-            <div className={PrataFont.className}>
-              <h1
-                className="w-auto text-4xl xl:text-5xl sm:tracking-wide leading-normal xl:leading-snug tracking-widest opacity-0"
-                ref={TitleRef}
-              >
-                Découvrez l'Art de l'Excellence Culinaire chez EURL Hatta Meuble
-              </h1>
-            </div>
-            <div className="flex gap-10 ">
-              <button className="bg-black   text-white font-semibold px-5 py-1 transition-transform duration-500 hover:scale-95 rounded-md hover:animate-pulse text-xl">
-                Commencer
-              </button>
-              <button className="text-xl hover:bg-black font-semibold hover:text-white transition-transform duration-500 hover:scale-95 px-5 py-1 rounded-md hover:animate-pulse">
-                À propos de nous
-              </button>
-            </div>
+    <div>
+      <div className="bg-[#FBFFFF] flex flex-col md:flex-row  items-center justify-center mt-32 w-screen">
+        <div className="md:w-1/2 w-full  flex flex-col px-5 md:px-20  ml-10 mb-10  ">
+          <div className={PrataFont.className}>
+            <h1
+              className=" text-2xl xl:text-5xl py-8 sm:tracking-wide leading-normal xl:leading-snug tracking-widest opacity-0   "
+              ref={TitleRef}
+            >
+              Découvrez l'Art de l'Excellence Culinaire chez{" "}
+              <span className="text-gray-600">EURL Hatta Meuble</span>
+            </h1>
           </div>
-          {/* Image Slider Section */}
-          <div className="xl:w-1/2 xl:px-32 px-20">
-            <Slider {...settings} className="w-[450px] xl:w-[700px]">
-              <div>
-                <Image src={MainKitchen} alt="Image" className="rounded-md" />
-              </div>
-              <div>
-                <Image src={Test} alt="Image" className="rounded-md" />
-              </div>
-            </Slider>
+          <div className="flex  sm:flex-wrap   h-10 sm:h-auto     gap-4">
+            <button className="bg-black   text-white font-semibold px-5 py-1 transition-transform duration-500 hover:scale-95 rounded-md hover:animate-pulse text-xl">
+              Commencer
+            </button>
+            <button className="text-xl hover:bg-black font-semibold hover:text-white transition-transform duration-500 hover:scale-95 px-1 py-1 rounded-md hover:animate-pulse">
+              À propos de nous
+            </button>
           </div>
         </div>
+
+        <div className="md:w-1/2 w-full">
+          <Slider {...settings} className="w-full px-0  sm:px-10 py-5  mb-5   ">
+            {" "}
+            {ImageArray.map((Element: any, index: number) => {
+              return (
+                <div key={Element.id}>
+                  <img
+                    src={`/assets/${Element.Url}`}
+                    alt="image-place"
+                    className="rounded-md  "
+                  />
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
       </div>
-      <div className="flex items-center justify-center mt-20">
+      <div className="flex items-center justify-center mt-5 ">
         <Image
           src={DownArrow}
           alt="downArrow"

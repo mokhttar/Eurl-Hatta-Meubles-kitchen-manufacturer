@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import Image from "next/image";
 import "slick-carousel/slick/slick-theme.css";
-import GrassLogo from "../assets/GrassLogo.svg";
-import SaliceLogo from "../assets/SaliceLogo.png";
+import GrassLogo from "/public/assets/GrassLogo.svg";
+import SaliceLogo from "/public/assets/SaliceLogo.png";
 function Brands() {
   var settings = {
     dots: false,

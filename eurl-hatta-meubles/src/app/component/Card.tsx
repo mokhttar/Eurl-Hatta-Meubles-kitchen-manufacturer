@@ -2,9 +2,9 @@ import React from "react";
 import { CardContainer, CardBody, CardItem } from "./3dCard";
 import Image from "next/image";
 import Link from "next/link";
-import HighGloseImgKitchen from "../assets/glossy-kitchen-cabinets-1024x512.jpg";
-import AccesoirsImg from "../assets/Accesoirs.jpg";
-import WorkerImages from "../assets/Workers.jpg";
+import HighGloseImgKitchen from "/public/assets/glossy-kitchen-cabinets-1024x512.jpg";
+import AccesoirsImg from "/public/assets/Accesoirs.jpg";
+import WorkerImages from "/public/assets/Workers.jpg";
 
 
 function Card() {
