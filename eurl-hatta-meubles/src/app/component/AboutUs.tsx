@@ -1,9 +1,9 @@
 "use client";
 // About us section to describe the company and the details about it
 import React, { useEffect, useRef } from "react";
-import DelevryIcon from "/public/assets/Lottie/Delivery.json";
-import PriceTagIcon from "/public/assets/Lottie/PriceTag.json";
-import ratingIcon from "/public/assets/Lottie/Rating.json";
+import DelevryIcon from "../Lottie/Delivery.json";
+import PriceTagIcon from "../Lottie/PriceTag.json";
+import ratingIcon from "../Lottie/Rating.json";
 import Lottie from "lottie-react";
 import { Merriweather } from "next/font/google";
 import { Poppins } from "next/font/google";
