@@ -1,9 +1,9 @@
 "use client";
 // About us section to describe the company and the details about it
 import React, { useEffect, useRef } from "react";
-import DelevryIcon from "../assets/Lottie/Delivery.json";
-import PriceTagIcon from "../assets/Lottie/PriceTag.json";
-import ratingIcon from "../assets/Lottie/Rating.json";
+import DelevryIcon from "/public/assets/Lottie/Delivery.json";
+import PriceTagIcon from "/public/assets/Lottie/PriceTag.json";
+import ratingIcon from "/public/assets/Lottie/Rating.json";
 import Lottie from "lottie-react";
 import { Merriweather } from "next/font/google";
 import { Poppins } from "next/font/google";
@@ -113,7 +113,9 @@ function AboutUs() {
           <div className="flex flex-col items-center text-start mb-8">
             <div className="flex gap-2 items-center justify-center">
               <Lottie animationData={ratingIcon} className="w-16 py-2" />
-              <p className="text-green-700 sm:text-xl text-lg mr-10">Expertise et Confiance</p>
+              <p className="text-green-700 sm:text-xl text-lg mr-10">
+                Expertise et Confiance
+              </p>
             </div>
 
             <p className="w-full lg:w-2/3 text-gray-800">
