@@ -20,4 +20,4 @@ EURL Hatta Meuble is a leading kitchen manufacturer committed to crafting beauti
 3. **TypeScript**: For type safety and improved code quality.
 4. **Tailwind CSS**: For styling and ensuring a modern, consistent look and feel.
 5. **Lottie Animations**: For adding engaging and interactive animations to enhance user experience.
-6. **MongoDB**: For managing and storing data efficiently.
+6. **Postgres**: For managing and storing data efficiently.
