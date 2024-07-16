@@ -1,22 +1,38 @@
 "use client";
-import React, { lazy } from "react";
+
+import { useRouter } from "next/navigation";
 import Logo from "/public/assets/Hatta Meubles.svg";
 import Image from "next/image";
 import { Outfit } from "next/font/google";
 import { Nunito } from "next/font/google";
 import { useState } from "react";
-import { useEffect } from "react";
 import MenuLogo from "/public/assets/Menu-Logo.svg";
 
 //TODO fix navbare in 649 px (only this number )
 const outfitFont = Outfit({ subsets: ["latin"], weight: "300" });
 const NunitoFont = Nunito({ subsets: ["latin"], weight: "300" });
 
+type MenuItems = {
+  id: number;
+  item: string;
+};
+
 function NavBare() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const route = useRouter();
 
   const toggleMenu = () => {
     setMenuOpen((prevMenuOpen) => !prevMenuOpen);
+  };
+  const MenuItems: MenuItems[] = [
+    { id: 1, item: "Produit" },
+    { id: 2, item: "Marques" },
+    { id: 3, item: " À propos de nous" },
+    { id: 4, item: " Contactez-nous" },
+  ];
+
+  const Redirect = (item: string) => {
+    route.push(`/${item.toLowerCase()}`);
   };
 
   return (
@@ -42,20 +58,23 @@ function NavBare() {
             menuOpen ? "absolute left-0 h-screen bg-white w-screen" : ""
           }`}
         >
-          <p className="hover:cursor-pointer px-2 hover:animate-pulse py-2  sm:py-1">
-            Produit
-          </p>
-          <p className="hover:cursor-pointer px-2  hover:animate-pulse py-2 sm:py-1">
-            Marques
-          </p>
-          <p className="hover:cursor-pointer px-2  hover:animate-pulse py-2 sm:py-1">
-            À propos de nous
-          </p>
-          <p className="hover:cursor-pointer px-2  hover:animate-pulse py-2 sm:py-1">
-            Contactez-nous
-          </p>
-         
-          <button className="bg-black px-5 text-white py-1 rounded-md flex items-center hover:bg-white hover:text-black transition-transform duration-500 hover:scale-105">
+          {MenuItems.map((Element: MenuItems) => {
+            return (
+              <p
+                className="hover:cursor-pointer px-2 hover:animate-pulse py-2  sm:py-1"
+                key={Element.id}
+                onClick={() => Redirect(Element.item)}
+              >
+                {Element.item}{" "}
+              </p>
+            );
+          })}
+          <button
+            className="bg-black px-5 text-white py-1 rounded-md flex items-center hover:bg-white hover:text-black transition-transform duration-500 hover:scale-105"
+            onClick={() => {
+              route.push("/Login");
+            }}
+          >
             Connexion
           </button>
         </div>

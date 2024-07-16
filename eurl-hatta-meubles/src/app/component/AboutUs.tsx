@@ -48,18 +48,18 @@ function AboutUs() {
 
   return (
     <div
-      className="flex flex-col items-center opacity-0 mt-10 py-10 lg:px-32 lg:py-24"
+      className="flex flex-col items-center opacity-0 mt-10 py-10 lg:px-32 lg:py-24  "
       ref={PageRef}
     >
       <div
-        className={` rounded-md flex flex-col border   text-start items-center px-5 justify-center ${PoppinsFont.className}`}
+        className={` rounded-md flex flex-col   bg-[#FAF6F0]   text-start items-center px-5 justify-center ${PoppinsFont.className}`}
       >
         <div className="w-full lg:w-2/3 text-gray-800">
-          <hr className="h-1 border-none mx-auto mt-10 bg-[#212529]" />
+          <hr className="h-1 border-none mx-auto mt-10 bg-[#212529] " />
           <h1
             className={`sm:text-5xl text-3xl text-[#2A3132] font-semibold md:text-6xl p-5 tracking-wide mb-4 text-center ${MerriFont.className}`}
           >
-            À propos de nous
+            pourquoi nous ?
           </h1>
           <p className="sm:text-lg  text-base  mb-8 font-semibold py-2 text-gray-800">
             EURL Hatta Meuble est une entreprise de fabrication de cuisines

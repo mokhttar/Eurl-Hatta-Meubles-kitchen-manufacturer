@@ -37,7 +37,7 @@ export default function HeroSection() {
       behavior: "smooth",
     });
   };
-  let TitleRef = useRef<HTMLHeadingElement>(null);  
+  let TitleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (TitleRef.current != null) {
