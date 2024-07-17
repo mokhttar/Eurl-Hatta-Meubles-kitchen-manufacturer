@@ -1,12 +1,11 @@
-"use client";
 import React from "react";
-import Image from "next/image";
-import LoginImg from "/public/assets/LoginPage.jpg";
 import LoginForm from "../component/LoginForm";
-function Page() {
+import LoginImg from "/public/assets/LoginPage.jpg";
+import Image from "next/image";
+function page() {
   return (
-    <div className="w-screen  h-screen overflow-hidden flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 flex justify-center items-center  px-4">
+    <div className="w-screen flex h-screen">
+      <div className="w-1/2">
         <LoginForm />
       </div>
       <div className="w-full md:w-1/2 border flex justify-center items-center">
@@ -23,4 +22,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default page;

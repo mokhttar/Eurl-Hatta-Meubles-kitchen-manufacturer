@@ -24,6 +24,7 @@ function NavBare() {
   const toggleMenu = () => {
     setMenuOpen((prevMenuOpen) => !prevMenuOpen);
   };
+
   const MenuItems: MenuItems[] = [
     { id: 1, item: "Produit" },
     { id: 2, item: "Marques" },
