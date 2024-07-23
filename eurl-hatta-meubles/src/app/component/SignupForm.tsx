@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Logo from "/public/assets/Hatta Meubles.svg";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import BlurFade from "@/components/magicui/blur-fade";
+import { redirect } from "next/dist/server/api-utils";
 
 function LoginForm() {
   // Type for wilaya
@@ -22,6 +24,7 @@ function LoginForm() {
     name: string;
   };
 
+  const router = useRouter();
   // States for form fields and errors
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
@@ -71,7 +74,7 @@ function LoginForm() {
 
   // Function to validate form fields
   const validateForm = (): boolean => {
-    const newErrors: { field: string; message: string }[] = [];
+    const newErrors: {field: string; message: string }[] = [];
 
     if (firstName.trim() === "") {
       newErrors.push({ field: "firstName", message: "First name is required" });
@@ -116,18 +119,47 @@ function LoginForm() {
     return newErrors.length === 0;
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const isValid = validateForm();
 
-    if (isValid) {
-      console.log("Form is valid, submitting...");
-    } else {
-      console.log("Form validation failed");
+    // if (isValid) {
+    //   console.log("Form is valid, submitting...");
+    // } else {
+    //   console.log("Form validation failed");
+    // }
+
+    if (isValid === true) {
+      const response = await fetch("http://localhost:3001/users/newUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          phoneNumber,
+          wilaya,
+          email,
+          password,
+        }),
+      });
+
+      if (!response.ok) {
+        toast({
+          title: "Error adding your data into the data base please try again !",
+          variant: "default",
+        });
+      } else {
+        toast({
+          title: "your account has been created !",
+          variant: "default",
+        });
+        router.push("/");
+      }
     }
   };
-
   return (
     <div className="w-full max-w-lg mx-auto p-4 sm:p-6 lg:p-8  scale-95  xl:scale-110">
       <BlurFade delay={0.3} inView>

@@ -3,15 +3,18 @@ import React, { FormEvent } from "react";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast"; // Ensure the path is correct
+import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
+
 
 function LoginForm() {
-  const [email, setEmail] = useState<string>("");
+  const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("");
   const [errors, setErrors] = useState<{ field: string; message: string }[]>(
     []
   );
   const { toast } = useToast();
+  const route = useRouter();
 
   const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -52,15 +55,42 @@ function LoginForm() {
     return newErrors.length === 0;
   }
 
+  const SubmitForm = async () => {
+    const response = await fetch("http://localhost:3001/users/logIn", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    if (!response.ok) {
+      const error = response.json();
+      toast({
+        title: "Login failed",
+        description: "Please check your email or password",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Login Seccusful",
+        variant: "default",
+      });
+      route.push("/");
+    }
+  };
+
   const Login = (event: FormEvent) => {
     event.preventDefault();
     const isValid = ValidationInputs();
-    console.log(isValid);
-  };
+    if (isValid) {
+      SubmitForm();
+    }
+  }; 
+  
 
   return (
     <div className="relative flex h-screen w-full items-center justify-center overflow-hidden rounded-lg border bg-gray-100 p-4 md:p-10 md:shadow-xl">
-      <div className="bg-white p-6 border md:p-10 rounded-sm relative w-full max-w-md">
+      <div className=" p-6    shadow-lg rounded-md  shadow-slate-500  md:p-20  relative w-full max-w-md">
         <div className="text-center">
           <h1 className="font-bold text-2xl md:text-4xl py-1">Welcome back</h1>
           <p className="text-sm md:text-base pt-4 text-gray-400">
@@ -76,23 +106,21 @@ function LoginForm() {
               type="email"
               value={email}
               onChange={handleEmail}
-              className="border-b border-black py-2 px-4 placeholder:text-gray-400 w-full"
+              className="border-b border-black   bg-transparent  py-2 px-4 placeholder:text-gray-400 w-full"
               placeholder="Please enter your email"
-              
             />
             <input
               type="password"
               value={password}
               onChange={handlePassword}
-              className="border-b border-black py-2 px-4 placeholder:text-gray-400 w-full"
+              className="border-b border-black py-2 px-4 bg-transparent placeholder:text-gray-400 w-full"
               placeholder="Please enter your password"
-              
             />
           </div>
-          <div className="py-4 mt-5">
+          <div className="py-4  w-full mt-5">
             <button
               type="submit"
-              className="px-10 rounded-md text-white bg-black py-2 border"
+              className="  w-full rounded-md text-white bg-black py-2 border"
             >
               Connect
             </button>

@@ -5,10 +5,10 @@ import Image from "next/image";
 function page() {
   return (
     <div className="w-screen flex h-screen">
-      <div className="w-1/2">
+      <div className="sm:w-1/2 w-screen">
         <LoginForm />
       </div>
-      <div className="w-full md:w-1/2 border flex justify-center items-center">
+      <div className="w-full hidden md:w-1/2 border sm:flex justify-center items-center">
         <div className="relative w-full h-full">
           <Image
             src={LoginImg}

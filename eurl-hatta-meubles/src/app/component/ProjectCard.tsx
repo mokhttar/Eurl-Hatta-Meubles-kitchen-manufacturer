@@ -7,6 +7,7 @@ import ProjectCardUi from "./ProjectCardUi";
 import { ProjectType } from "../types";
 import Router, { useRouter } from "next/router";
 
+
 //TODO fix font and text size for mobile devices
 //TODO add animations
 function ProjectCard({
@@ -31,7 +32,6 @@ function ProjectCard({
     });
     console.log(id);
     //animation for the text in the cards
-
     gsap.to(textRef.current, {
       duration: 0.8,
     });
