@@ -33,7 +33,7 @@ function NavBare() {
   ];
 
   const Redirect = (item: string) => {
-    route.push(`/${item.toLowerCase()}`);
+    route.push(`/${item}`);
   };
 
   return (
@@ -41,7 +41,12 @@ function NavBare() {
       <div className="flex gap-2 items-center">
         <Image src={Logo} alt="Logo" className="w-20" />
         <div className={outfitFont.className}>
-          <h2 className="text-xl font-semibold">Hatta Meubles</h2>
+          <button
+            className="text-xl font-semibold"
+            onClick={() => Redirect("/")}
+          >
+            Hatta Meubles
+          </button>
         </div>
       </div>
 

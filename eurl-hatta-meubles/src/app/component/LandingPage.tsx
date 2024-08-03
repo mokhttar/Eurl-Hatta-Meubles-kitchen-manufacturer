@@ -1,7 +1,8 @@
-import React from "react";
+
 import HeroSection from "./HeroSection";
 import Brands from "./Brands";
 import AboutUs from "./AboutUs";
+// import  AboutUs  from "./AboutUsV2";
 import Card from "./Card";
 import ProjectCardUi from "./ProjectCardUi";
 function LandingPage() {
@@ -13,7 +14,7 @@ function LandingPage() {
       <Card />
       <Brands />
       <AboutUs />
-      <ProjectCardUi />
+      {/* <ProjectCardUi /> */}
      
     </div>
   );

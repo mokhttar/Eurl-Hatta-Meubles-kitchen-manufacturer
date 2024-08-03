@@ -6,9 +6,8 @@ import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 
-
 function LoginForm() {
-  const [email, setEmail] = useState<string>("")
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errors, setErrors] = useState<{ field: string; message: string }[]>(
     []
@@ -85,8 +84,7 @@ function LoginForm() {
     if (isValid) {
       SubmitForm();
     }
-  }; 
-  
+  };
 
   return (
     <div className="relative flex h-screen w-full items-center justify-center overflow-hidden rounded-lg border bg-gray-100 p-4 md:p-10 md:shadow-xl">
