@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Children } from "react";
 import Image from "next/image";
 import { Products } from "@/app/Data/Products";
 import LatestProductUi from "./LatestProductUi";
+import BlurFade from "@/components/magicui/blur-fade";
 function LatestProducts() {
   return (
     <div className="flex gap-3 px-2">

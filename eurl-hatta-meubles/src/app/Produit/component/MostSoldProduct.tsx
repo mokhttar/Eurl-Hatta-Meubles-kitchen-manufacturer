@@ -32,14 +32,11 @@ function MostSoldProduct() {
           </h1>
           <hr className="border w-32 border-black my-1" />
           <p className="text-left text-sm w-fit h-full">
-            The Nova Pro Scala double-wall drawer system brings timeless
-            elegance and futuristic design elements to the residential
-            construction market. Featuring unparalleled quality, stability,
-            running performance, and versatility, the Nova Pro Scala allows
-            cabinet manufacturers to create beautiful, distinctive kitchens and
-            baths to match any decor. Grass offers Nova Pro Scala in four
-            heights, nine lengths, and three finishes: Silver, Ice, and Stone or
-            fabricate your own custom side panel covers.
+            The Nova Pro Scala double-wall drawer system offers elegance and
+            futuristic design, with superior quality and versatility. Available
+            in various heights, lengths, and finishes (Silver, Ice, Stone), it
+            allows for custom side panels, perfect for distinctive kitchens and
+            baths.
           </p>
         </div>
       </BlurFade>
